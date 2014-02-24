@@ -1,7 +1,6 @@
 module Web.Express where
 
 import Prelude
-import Data.Monoid
 import Control.Monad
 import Control.Monad.Eff
 
