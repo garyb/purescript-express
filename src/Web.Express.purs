@@ -100,10 +100,10 @@ get :: forall res eff. Route -> RouteHandler res eff -> ExpressM eff {}
 get = route GET
 
 post :: forall res eff. Route -> RouteHandler res eff -> ExpressM eff {}
-post = route GET
+post = route POST
 
 put :: forall res eff. Route -> RouteHandler res eff -> ExpressM eff {}
-put = route GET
+put = route PUT
 
 delete :: forall res eff. Route -> RouteHandler res eff -> ExpressM eff {}
-delete = route GET
+delete = route DELETE
