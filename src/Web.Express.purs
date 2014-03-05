@@ -62,7 +62,7 @@ type RouteHandler res eff = HTTPContext res -> Eff eff {}
 data HTTPVerb = GET | HEAD | POST | PUT | DELETE | TRACE | OPTIONS | CONNECT | PATCH
 type HTTPContext res = { req :: Request, res :: Response res }
 
-instance Prelude.Show HTTPVerb where
+instance showHTTPVerb :: Prelude.Show HTTPVerb where
   show GET = "get"
   show HEAD = "head"
   show POST = "post"
@@ -75,7 +75,7 @@ instance Prelude.Show HTTPVerb where
 
 data ExpressM eff a = ExpressM (Express eff -> { express :: Express eff, value :: a })
 
-instance Prelude.Monad (ExpressM eff) where
+instance monadExpressM :: Prelude.Monad (ExpressM eff) where
   return x = ExpressM \e -> { express: e, value: x }
   (>>=) (ExpressM f) g = ExpressM \e -> 
     let { express = e', value = x } = f e in
